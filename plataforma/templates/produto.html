@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'head' %}
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+{% endblock %}
+
+{% block 'conteudo' %}
+<div style="align-items: center; text-align: center;">
+
+    <img class="tamanhoImg" style="margin-top: 20px; width: 250px;" src="{{produto.img.url}}">
+
+    <h2 style="margin-top: 10px; color: purple;" class="titulo tituloProduto">{{produto.nome}}</h2>
+    <h4 class="titulo subTituloProduto">Descrição:</h4>
+    <h5 style="color: gray;">{{produto.descricao}}</h5>
+    <h4 class="titulo subTituloProduto">Quantidade:</h4>
+    <input name="quantidade" class="observacoes" type="number"  min="1" max="200" value="1">
+    <h4 style="margin-top: 10px;" class="titulo subTituloProduto">Preço:</h4>
+    <h5>R$ {{produto.preco}}0/Unidade</h5>
+    <input style="background-color: purple; color: white; padding: 8px; border-radius: 15px; transition: 2s;" class="botao" type="submit" value="Adicionar ao carrinho">
+</form>
+
+</div>
+
+{% endblock %}

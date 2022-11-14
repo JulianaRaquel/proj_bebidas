@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block 'conteudo' %}
+<div style="margin-top: 30px;" class="container">
+    <div class="row">
+    {% for produto in produtos %}
+
+    {% if produto.ativo %}
+      <div class="col-sm">
+        <div class="cont">
+            <img style="width: 350px; margin-top: 20px;" src="/media/{{produto.img}}">
+        </div>
+        <h1 style="width: 350px; font-family: Gill Sans Extrabold, sans-serif; color: purple; font-size: 30px;" class="nome titulo bordaBottom">{{produto.nome}}</h1>
+        <h1 style="font-size: 30px;" class="rosa">R$ {{produto.preco}}0</h1>
+        <br>
+        <a style="background-color: purple; color: white; width: 25%; padding: 10px; border-radius: 15px;" class="btn" href="{% url 'produto' produto.id %}">Comprar</a>
+        <br>
+      </div>
+    {% endif %}
+    {% endfor %}
+
+
+    </div>
+  </div>
+{% endblock %}
